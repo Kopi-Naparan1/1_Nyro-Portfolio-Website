@@ -21,15 +21,27 @@ nyroEmail.addEventListener("click", () => {
 });
 
 if (window.visualViewport) {
-  const form = document.querySelector("form");
+  const formContainer = document.querySelector(".email-form-container");
 
   window.visualViewport.addEventListener("resize", () => {
-    const offset =
-      window.visualViewport.height - form.getBoundingClientRect().bottom;
+    // Distance from bottom of container to viewport bottom
+    const containerRect = formContainer.getBoundingClientRect();
+    const offset = window.visualViewport.height - containerRect.bottom;
+
     if (offset < 0) {
-      form.style.transform = `translateY(${offset}px)`;
+      // Move the whole container up
+      formContainer.style.transform = `translateY(${offset}px)`;
     } else {
-      form.style.transform = "";
+      // Reset when keyboard is hidden
+      formContainer.style.transform = "";
     }
+  });
+
+  formContainer.querySelectorAll("input, textarea").forEach((el) => {
+    el.addEventListener("focus", () => {
+      setTimeout(() => {
+        formContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
+    });
   });
 }
