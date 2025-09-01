@@ -19,3 +19,17 @@ accordions.forEach((accordion) => {
 nyroEmail.addEventListener("click", () => {
   emailForm.classList.toggle("active");
 });
+
+if (window.visualViewport) {
+  const form = document.querySelector("form");
+
+  window.visualViewport.addEventListener("resize", () => {
+    const offset =
+      window.visualViewport.height - form.getBoundingClientRect().bottom;
+    if (offset < 0) {
+      form.style.transform = `translateY(${offset}px)`;
+    } else {
+      form.style.transform = "";
+    }
+  });
+}
