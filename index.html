@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="First version of Nyro's portfolio website"
+    />
+    <title>Nyro | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body id="top">
+    <header>
+      <h1 class="logo">
+        <a href="#top">Nyro</a>
+      </h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li class="about_nav"><a href="#about">About</a></li>
+          <li class="projects_nav"><a href="#projects">Projects</a></li>
+          <li class="contact_nav"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button> -->
+    </header>
+
+    <main>
+      <section id="about" class="container">
+        <div class="about-heading"><h2>About</h2></div>
+
+        <div class="description">
+          <p>
+            <span class="nyro-description-span">Nyro</span> is a programmer on a mission to create software that saves people time. <span class="nyro-description-span"">Everyday</span>, he hones his skills through consistent coding practice.
+          </p>
+        </div>
+        <div class="profile-pic-div">
+          <img
+            class="profile-pic"
+            src="images/cropped_profile.jpg"
+            alt="Nyro's Portrait"
+          />
+        </div>
+      </section>
+
+      <section id="projects" class="container">
+        <div class="projects-heading"><h2>Projects to Build</h2></div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>1: Nyro's Portfolio Website</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Start: Aug 25, 2025</span>
+                <span>End: Aug 31, 2025</span>
+              </span>
+              <br />
+
+              <span class="project-description">
+                A responsive personal portfolio to showcase projects and
+                projects to build.</span
+              </span>
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>2: FormGuard – Interactive Form Validator</h3>
+              <i class="fas fa-angle-down" id="icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Sep 1, 2025</span>
+                <span>Expected End: Sep 14, 2025</span>
+              </span>
+              <br />
+
+              <span class="project-description"
+                >A form with live validation, password strength check, and error
+                handling.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>3: TaskFlow – Simple Task Manager</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Sep 15, 2025</span>
+                <span>Expected End: Sep 30, 2025</span>
+              </span>
+              <br />
+              <span class="project-description"
+                >A CRUD to-do list with filtering, persistence in localStorage,
+                and TypeScript typing.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>4: WeatherNow – Live Weather App</h3>
+              <i class="fas fa-angle-down" id="icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Oct 1, 2025</span>
+                <span>Expected End: Oct 14, 2025</span>
+              </span>
+              <br />
+              <span class="project-description">
+                A weather dashboard fetching real-time data from OpenWeather API
+                with search history.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>5: BlogSpace</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Oct 15, 2025</span>
+                <span>Expected End: Oct 31, 2025</span>
+              </span>
+              <br />
+              <span class="project-description">
+                A blog built with Next.js that lists posts from JSON and
+                supports dynamic routing.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>6: DashBoardX – User Dashboard UI</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Nov 1, 2025</span>
+                <span>Expected End: Nov 14, 2025</span>
+              </span>
+              <br />
+              <span class="project-description">
+                A responsive dashboard with sidebar navigation and a filterable
+                user table.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>7: NoteBox – Full-Stack Notes App</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Nov 15, 2025</span>
+                <span>Expected End: Nov 30, 2025</span>
+              </span>
+              <br />
+              <span class="project-description"
+                >A CRUD notes app with Next.js API routes, Prisma ORM, and
+                database integration.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>8: AuthBoard – Secure User Dashboard</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Dec 1, 2025</span>
+                <span>Expected End: Dec 14, 2025 </span>
+              </span>
+              <br />
+              <span class="project-description">
+                An authenticated dashboard where users can log in and manage
+                their private notes.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>9: ShopLite – Mini E-commerce App</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: Dec 15, 2025</span>
+                <span>Expected End: Dec 31, 2025</span>
+              </span>
+              <br />
+              <span class="project-description"
+                >A full-stack e-commerce app with product listings, cart system,
+                and checkout simulation.</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-wrapper">
+          <div class="accordion">
+            <div class="accordion-heading">
+              <h3>10: FitCoachPro – SaaS MVP (Capstone)</h3>
+              <i class="fas fa-angle-down" class="accordion-icon"></i>
+            </div>
+            <p class="accordion-content">
+              <span class="accordion-content-date">
+                <span>Expected Start: January 1, 2026</span>
+                <span>Expected End: February 31, 2026</span>
+              </span>
+              <br />
+              <span class="project-description"></span>
+              A SaaS app for managing clients, notes, and workout plans with
+              GPT-powered summaries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="container">
+        <h2 class="contact-header">
+          Contact Me <span class="click-link"> (Click)</span>
+        </h2>
+        <address>
+          <br />
+
+          <a
+            target="_blank"
+            href="https://web.facebook.com/kopi.anan.naparan.2024/"
+            >Nyro's FB</a
+          >
+          <a target="_blank" href="https://x.com/NyroK46729">Nyro's Twitter</a>
+
+          <a class="nyro-email">nyrokhufraleq@gmail.com</a>
+          <div class="email-form-container">
+            <form
+              action="https://formspree.io/f/meolkyov"
+              method="POST"
+              class="emailForm"
+            >
+              <label class="label-form">
+                Your Name:
+                <input type="text" name="name" required />
+              </label>
+              <label class="label-form">
+                Your Email:
+                <input type="email" name="_replyto" required />
+              </label>
+              <label class="label-form">
+                Message:
+                <textarea name="message" required></textarea>
+              </label>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </address>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Nyro. All rights reserved.</p>
+      <p class="version">version 1 (Aug 31, 2025)</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

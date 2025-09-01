@@ -1,0 +1,402 @@
+/*===== Neccessary =====*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --color-bg: #000814;
+  --color-bg-lighter: #001d3d;
+  --color-bg-lightest: #003566;
+  --color-highlight: #ffd60a;
+  --color-text: #ffc300;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg-lighter);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 1px;
+}
+
+header {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-lightest);
+  padding: 0rem 2rem;
+  box-shadow: 0 2px 3px rgba(196, 219, 95, 0.07);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  flex-direction: column;
+  gap: 1rem;
+  display: none;
+  background: var(--color-bg-lightest);
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px 5px rgba(221, 241, 134, 0.07);
+}
+
+/* ===== Classes ===== */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-highlight);
+  text-decoration: none;
+  letter-spacing: -2px;
+  padding: 0px 0px 0px 0px;
+}
+
+.version {
+  padding: 0px 0px 0px 0px;
+  font-size: 6px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+/* .hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+} */
+
+.profile-pic-div {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 320px;
+  border-radius: 20%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid var(--color-highlight);
+  animation: glowingPulse 2s infinite alternate;
+}
+
+/* .hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+} */
+
+.profile-pic-div {
+  order: -1;
+}
+
+.about-heading {
+  order: -1;
+}
+
+.about-heading h2 {
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+  padding: 0px 0px 20px 0px;
+}
+
+.description {
+  text-align: justify;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  padding: 40px 0px 3.5rem 0px;
+}
+
+nav ul.active {
+  display: flex;
+}
+
+/* IDs */
+#about {
+  display: flex;
+  flex-direction: column;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-heading h2 {
+  order: -1;
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+  padding: 0px 0px 2rem 0px;
+}
+
+/* ===== Accordion Part ===== */
+
+/* Accordion Wrapper */
+.accordion-wrapper {
+  padding: 0px 20px;
+}
+
+/* == accordion == */
+.accordion {
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ==  Accordion Heading ==  */
+.accordion-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 10px;
+  padding: 1px 8px;
+  border: 1px solid rgba(255, 214, 10, 0.5);
+  background-color: var(--color-bg-lighter);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.accordion-heading h3 {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  font-family: var(--font-body);
+  color: rgba(255, 214, 10, 0.5);
+  transition: all 0.2s ease;
+}
+
+.accordion-heading i {
+  color: rgba(255, 214, 10, 0.5);
+  transition: all 0.25s ease;
+  font-size: 0.75em;
+}
+
+/* == Active Accordion == */
+
+.accordion.active .accordion-heading {
+  border: 2px solid rgba(255, 214, 10);
+}
+
+.accordion.active .accordion-heading h3 {
+  color: var(--color-highlight);
+  background-color: #002547;
+}
+
+.accordion.active .accordion-heading i {
+  transform: rotate(180deg);
+  color: var(--color-highlight);
+}
+
+.accordion.active .accordion-content {
+  max-height: 500px; /* big enough to fit your content */
+  padding: 1rem; /* restore padding */
+  border: 2px solid var(--color-highlight);
+}
+
+.accordion-content .accordion-content-date {
+  font-size: xx-small;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* == Accordion Content == */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.5rem;
+  font-weight: 200;
+  background-color: var(--color-bg-lightest);
+
+  border-top: 0;
+  border-radius: 5px;
+  padding: 0 1rem; /* no vertical padding when collapsed */
+  line-height: 2;
+  transform-origin: top;
+  transition: max-height 0.3s ease, padding 0.3s ease, border 0.3s ease;
+}
+
+/* === Hover Effect Accordion === */
+
+.accordion:hover .accordion-heading {
+  border: 1px solid var(--color-highlight);
+  background-color: #002547;
+  box-shadow: 0 0 3px var(--color-highlight); /* glowing effect */
+  transform: scale(1.02); /* subtle zoom */
+}
+
+.accordion:hover .accordion-heading h3,
+.accordion:hover .accordion-heading i {
+  color: var(--color-highlight);
+  text-shadow: 0 0 6px var(--color-highlight);
+}
+
+@keyframes animate {
+  0% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes glowingPulse {
+  0% {
+    box-shadow: 0 0 5px var(--color-highlight), 0 0 10px var(--color-highlight);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--color-bg-lightest),
+      0 0 30px var(--color-highlight);
+  }
+}
+
+/* === Contact Page === */
+
+.contact-header {
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+  padding: 0px 0px 20px 0px;
+}
+
+address {
+  font-size: 0.5rem;
+  font-weight: 200;
+  color: var(--color-text);
+  padding: 0rem 1rem;
+}
+address a {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+address a:hover {
+  color: var(--color-highlight);
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer {
+  font-size: 0.5rem;
+  font-weight: 200;
+  color: var(--color-text);
+  padding: 0 0 0 1rem;
+}
+
+.click-link {
+  opacity: 0.6;
+  font-size: 0.2rem;
+}
+
+.email-form-container {
+  display: none;
+}
+
+.email-form-container.active {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: var(--color-bg-lightest);
+  border-radius: 5px;
+  border: 1px solid var(--color-highlight);
+  font-size: xx-small;
+  max-width: 300px;
+  margin: 0.3rem;
+  animation: animate 0.2s linear backwards;
+}
+
+.email-form-container input,
+.email-form-container textarea,
+.email-form-container button {
+  width: 100%; /* fill the container */
+  max-width: 100%; /* prevent overflow */
+  margin: 0.2rem 0; /* space between fields */
+  padding: 0.2rem; /* breathing room inside fields */
+  border: 1px solid var(--color-highlight);
+  border-radius: 3px;
+  background-color: var(--color-bg-lighter);
+  color: var(--color-text);
+  font-size: 0.5rem; /* matches your tiny style */
+  box-sizing: border-box; /* ensures padding stays inside */
+}
+
+.email-form-a textarea {
+  resize: vertical; /* allow only vertical resize */
+  min-height: 50px;
+}
+
+.email-form-a button {
+  cursor: pointer;
+  background-color: var(--color-highlight);
+  color: var(--color-bg);
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.email-form-a button:hover {
+  background-color: #ffea61;
+}
+
+.project-description {
+  text-align: justify;
+}
+
+.nyro-description-span {
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: var(--color-highlight);
+}
