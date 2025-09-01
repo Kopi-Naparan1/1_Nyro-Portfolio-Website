@@ -1,6 +1,7 @@
 let accordions = document.querySelectorAll(".accordion-wrapper .accordion");
 const nyroEmail = document.querySelector(".nyro-email");
 const emailForm = document.querySelector(".email-form-container");
+const closeForm = document.querySelector(".email-form-container .close-form");
 
 accordions.forEach((accordion) => {
   accordion.addEventListener("click", () => {
@@ -14,10 +15,6 @@ accordions.forEach((accordion) => {
       accordion.classList.add("active");
     }
   });
-});
-
-nyroEmail.addEventListener("click", () => {
-  emailForm.classList.toggle("active");
 });
 
 if (window.visualViewport) {
@@ -45,3 +42,11 @@ if (window.visualViewport) {
     });
   });
 }
+
+nyroEmail.addEventListener("click", () => {
+  emailForm.classList.toggle("active");
+});
+
+closeForm.addEventListener("click", () => {
+  emailForm.classList.toggle("active");
+});

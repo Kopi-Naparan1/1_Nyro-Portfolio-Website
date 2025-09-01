@@ -315,22 +315,29 @@ footer {
 
 /* Email Form */
 .email-form-container {
-  display: none;
-}
-
-.email-form-container.active {
-  display: flex;
+  display: flex; /* Keep flex always for layout */
   flex-direction: column;
-  max-width: 300px;
-  margin: 0.3rem;
-  padding: 0.5rem;
-
+  max-height: 0; /* Collapsed by default */
+  opacity: 0;
+  overflow: hidden;
+  transform: scaleY(0);
+  margin: 0; /* remove margin so it doesn't push layout when closed */
+  padding: 0; /* remove padding so collapse is smooth */
   font-size: x-small;
   border: 2px solid var(--color-highlight);
   border-radius: 5px;
   background-color: var(--color-bg-lightest);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease,
+    padding 0.3s ease, margin 0.3s ease;
+  transform-origin: top;
+}
 
-  animation: animate 0.2s linear backwards;
+.email-form-container.active {
+  max-height: 500px; /* adjust based on content height */
+  opacity: 1;
+  transform: scaleY(1);
+  margin: 0.3rem; /* restore margin */
+  padding: 0.5rem; /* restore padding */
 }
 
 .email-form-container input,
@@ -349,6 +356,25 @@ footer {
   box-sizing: border-box;
 }
 
+.email-form-container .close-form {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-highlight);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  max-width: 16px;
+}
+
+.close-form:hover {
+  color: #ffea61; /* Highlight on hover */
+}
 .email-form-a textarea {
   resize: vertical;
   min-height: 50px;
